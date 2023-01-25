@@ -24,7 +24,7 @@ func main() {
 				Timeout: time.Second * 60,
 			}
 			fmt.Println(url + r.URL.Path)
-			req, err := http.NewRequest("GET", url+r.URL.Path, r.Body)
+			req, err := http.NewRequest(r.Method, url+r.URL.Path, r.Body)
 			if err != nil {
 				lastErr = err
 				continue
