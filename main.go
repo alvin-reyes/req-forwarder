@@ -67,9 +67,3 @@ func main() {
 	fmt.Println("Started the forwarder......")
 	http.ListenAndServe(":8080", nil)
 }
-
-func handleHealth(c echo.Context) error {
-	return c.JSON(http.StatusOK, map[string]string{
-		"status": "ok",
-	})
-}
