@@ -17,7 +17,7 @@ go build -tags netgo -ldflags '-s -w' -o req-forwarder
 ```
 
 # Test
-Run the following on your localhost
+Run the following on your localhost. This will redirect all request from the localhot:8080 to the designated domains.
 http://localhost:8080/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
 
 # Testing on a live server
