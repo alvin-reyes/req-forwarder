@@ -18,4 +18,4 @@ go build -tags netgo -ldflags '-s -w' -o req-forwarder
 
 # Test
 Run the following
-https://shuttle-4.estuary.tech/gw/<>
+https://shuttle-4.estuary.tech/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
