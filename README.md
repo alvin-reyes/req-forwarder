@@ -4,12 +4,12 @@
 
 # Build and Install
 ```
-go build -o req-forwarder
+go build -tags netgo -ldflags '-s -w' -o req-forwarder
 ```
 
 # Running
 ```
-./req-forwarder --domains=https://shuttle-4-bs1.estuary.tech,https://shuttle-4-bs1.estuary.tech
+./req-forwarder --domains=https://shuttle-4-bs1.estuary.tech,https://shuttle-4-bs2.estuary.tech
 ```
 
 # Test

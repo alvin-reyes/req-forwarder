@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"net/http"
 	"strings"
 	"time"
@@ -17,35 +18,33 @@ func main() {
 
 	// create a custom http handler
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-
-		//var resp *http.Response
-
 		for _, url := range domains {
-			var _ error
+			var lastErr error
 			client := &http.Client{
-				Timeout: time.Second * 10,
+				Timeout: time.Second * 60,
 			}
-			req, err := http.NewRequest(r.Method, url+r.URL.Path, r.Body)
+			fmt.Println(url + r.URL.Path)
+			req, err := http.NewRequest("GET", url+r.URL.Path, r.Body)
 			if err != nil {
-				_ = err
+				lastErr = err
 				continue
 			}
 			req.Header = r.Header
 			resp, err := client.Do(req)
 			if err != nil {
-				_ = err
+				lastErr = err
 				continue
 			}
 			defer resp.Body.Close()
 			if resp.StatusCode == http.StatusOK {
-				w.WriteHeader(http.StatusOK)
+				http.Redirect(w, r, url+r.URL.Path, http.StatusTemporaryRedirect)
 				return
 			}
+			fmt.Errorf("error %s", lastErr)
 		}
-
-		//defer resp.Body.Close()
 	})
 
 	// start the http server
+	fmt.Println("Started the forwarder......")
 	http.ListenAndServe(":8080", nil)
 }
