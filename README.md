@@ -1,4 +1,8 @@
 # Request Forwarder
+
+![image](https://user-images.githubusercontent.com/4479171/214675514-fa7a4a69-fb34-49a9-9089-325aebf38b61.png)
+
+
 - Forwards request to a list of defined domains
 - If one of the domains return a failure, it goes to other domains until it fulfills all the request.
 
@@ -13,5 +17,8 @@ go build -tags netgo -ldflags '-s -w' -o req-forwarder
 ```
 
 # Test
-Run the following
-https://shuttle-4.estuary.tech/gw/<>
+Run the following on your localhost. This will redirect all request from the localhot:8080 to the designated domains.
+http://localhost:8080/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
+
+# Testing on a live server
+https://shuttle-4.estuary.tech/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
