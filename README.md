@@ -17,5 +17,8 @@ go build -tags netgo -ldflags '-s -w' -o req-forwarder
 ```
 
 # Test
-Run the following
+Run the following on your localhost
+http://localhost:8080/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
+
+# Testing on a live server
 https://shuttle-4.estuary.tech/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
