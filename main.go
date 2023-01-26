@@ -42,7 +42,9 @@ func main() {
 			client := &http.Client{
 				Timeout: time.Second * 60,
 			}
+			fmt.Println(r.Method)
 			fmt.Println(url + r.URL.Path)
+			fmt.Println(r.Body)
 			req, err := http.NewRequest(r.Method, url+r.URL.Path, r.Body)
 			if err != nil {
 				lastErr = err
