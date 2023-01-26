@@ -13,11 +13,11 @@ go build -tags netgo -ldflags '-s -w' -o req-forwarder
 
 # Running
 ```
-./req-forwarder --domains=https://shuttle-4-bs1.estuary.tech,https://shuttle-4-bs2.estuary.tech
+./req-forwarder --gateway-domains=https://shuttle-4-bs1.estuary.tech,https://shuttle-4-bs2.estuary.tech --upload-domains=https://upload.estuary.tech
 ```
 
 # Test
-Run the following on your localhost. This will redirect all request from the localhot:8080 to the designated domains.
+Run the following on your localhost. This will redirect all request from the localhost:8080 to the designated domains.
 http://localhost:8080/gw/ipfs/QmT6JqiXRacL2uL8FfuB1svopR5LtAtPyTpXimBFetsorN
 
 # Testing on a live server
